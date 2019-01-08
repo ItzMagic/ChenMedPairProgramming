@@ -1,0 +1,107 @@
+// BEM Mixin
+
+@mixin  e($element) {
+
+    &__#{$element} {
+ @content;
+   }
+  }
+  @mixin  m($modifier) {
+  
+    &--#{$modifier} {
+  
+    @content;
+  
+   }
+  
+  }
+
+.b-roster{
+    @include e("container"){
+        max-width: 1240px;
+        margin: 0 auto;
+
+    }
+
+}
+.b-patientinfo-top { 
+    display: flex;
+    height: 50px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: lightblue;
+    @include e("leftContent"){
+            display: flex;
+            flex-direction: row;
+            
+    }
+    @include e("dropdown"){
+        margin-right: 30px;
+    }
+}
+.b-patientinfo-bottom{
+    align-items: center;
+    background-color: bisque;
+    display: flex;
+    height: 50px;
+    justify-content: space-between;
+    @include e("leftContent"){
+        display: flex;
+        flex-direction:row;
+    }
+    @include e("location"){
+        margin-right: 25px;
+    }
+    @include e("drName"){
+        margin-right: 25px;
+    }
+}
+
+.b-main-content{
+    display: flex;
+
+    flex-direction: row;
+    justify-content: space-around;
+    
+}
+
+.b-left-column{
+        flex: 1 auto;
+    @include e("header"){
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    @include e("title"){
+        margin-right:10px;
+    }
+}
+
+.b-center-column{ 
+    flex: 1 auto;
+    @include e("header"){
+        display: flex;
+       
+        flex-direction: row;
+        align-items: center;
+    }
+    @include e("title"){
+        margin-right:10px;
+    }
+}
+
+.b-right-column{
+    flex: 1 auto;
+    @include e("header"){
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    @include e("title"){
+        // align-items: flex-start;
+        margin-right:10px;
+    }
+}
+
+
+
